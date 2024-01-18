@@ -1,0 +1,1 @@
+This repo will be the beginning of learning C
