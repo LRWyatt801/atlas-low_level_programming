@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-\* Using puts to print a string of characters*\
+/* main - prints "Programming is like building a multilingual puzzle */
 
 int main(void)
 {
