@@ -1,0 +1,1 @@
+This dir will help me to learn how to code in variables and loops in C
