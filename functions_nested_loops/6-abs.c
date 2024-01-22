@@ -7,7 +7,7 @@
 
 /**
  * _abs - computes the absolute value
- * int - test int
+ * @c - test int
  *
  * Return: int
  */
