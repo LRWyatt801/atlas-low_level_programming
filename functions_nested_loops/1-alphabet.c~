@@ -1,0 +1,13 @@
+/*
+ * File: 1-alphabet.c
+ * Auth: Logan Wyatt
+ */
+
+int print_alpha(char l)
+{
+	for (l = 'a'; l <= 'z'; l++)
+		putchar(l);
+	putchar('\n');
+
+	return(char);
+}
