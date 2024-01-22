@@ -19,7 +19,7 @@ int main(void)
 
 	for (n = 0; n < 10; n++)
 		putchar('0' + n);
-	for (hex = a; hex < f; hex++)
+	for (hex = 'a'; hex < 'f'; hex++)
 		putchar(hex);
 	putchar('\n');
 
