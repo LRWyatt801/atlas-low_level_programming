@@ -3,7 +3,7 @@
  * Auth: Logan Wyatt
  */
 
-#include<stdio.h>
+#include<main.h>
 
 /**
  * main - print "_putchar", followed by new line
