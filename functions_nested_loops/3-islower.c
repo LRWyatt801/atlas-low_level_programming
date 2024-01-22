@@ -13,10 +13,8 @@
 
 int _islower(int c)
 {
-	if (c = ['a..z'])
-		_putchar(1 + '0');
-	else
-		_putchar(0 + '0');
+	if (c >= 97 && c <= 122)
+		return(1);
 
-	return(int);
+	return(0);
 }
