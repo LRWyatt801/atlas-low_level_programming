@@ -6,7 +6,8 @@
 #include "main.h"
 
 /**
- * int_islower - prints whether or not an int is lowercase
+ * _islower - prints whether or not an int is lowercase
+ * @c: character to be checked
  *
  * Return: int
  */
