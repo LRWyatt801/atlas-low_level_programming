@@ -6,7 +6,7 @@
 #include "main.h"
 
 /**
- * main - print alphabet with _putchar.c
+ * print_alphabet - print alphabet with _putchar.c
  *
  * Return: void
  */
