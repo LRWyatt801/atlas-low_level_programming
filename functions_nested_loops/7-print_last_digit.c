@@ -18,10 +18,12 @@ int print_last_digit(int n)
 
 	if (n < 0)
 	{
-		int neg;
-		neg = n * -1;
-		lst_n = neg % 10;
-		return (lst_n)
+		int pos;
+		pos = n * -1;
+		lst_n = pos % 10;
+		_putchar(lst_n + '0');
+
+		return (lst_n);
 	}
 	lst_n = n % 10;
 	_putchar(lst_n + '0');
