@@ -19,6 +19,7 @@ int print_last_digit(int n)
 	if (n < 0)
 	{
 		int pos;
+
 		pos = n * -1;
 		lst_n = pos % 10;
 		_putchar(lst_n + '0');
