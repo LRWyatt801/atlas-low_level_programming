@@ -14,7 +14,7 @@
 
 int print_last_digit(int n)
 {
-	int lst_n;
+	long int lst_n;
 
 	if (n < 0)
 		n = n * -1;
