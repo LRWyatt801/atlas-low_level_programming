@@ -3,7 +3,7 @@
  * auth: Logan Wyatt
  */
 
-include "main.h"
+#include "main.h"
 
 /**
  * jack_bauer - print every minute from 00:00 to 23:59
