@@ -25,22 +25,27 @@ void times_table(void)
 			if (pro >= 10)
 			{
 				int tens, ones;
+
 				tens = (pro - (pro % 10)) / 10;
 				ones = pro % 10;
 				_putchar(tens + '0');
 				_putchar(ones + '0');
 				if (b < 9)
+				{
 					_putchar(',');
 					_putchar(' ');
+				}
 				else
-					_putchar('\n');;
+					_putchar('\n');
 			}
 			else
 			{
 				_putchar(pro + '0');
 				if (b < 9)
+				{
 					_putchar(',');
 					_putchar(' ');
+				}
 				else
 					_putchar('\n');
 			}
