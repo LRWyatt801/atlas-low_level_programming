@@ -44,6 +44,6 @@ void time_table(void)
 			}
 		}
 		/* set b to 0*/
-		b = 0
+		b = 0;
 	}
 }
