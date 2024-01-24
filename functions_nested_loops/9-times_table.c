@@ -27,8 +27,8 @@ void times_table(void)
 				int tens, ones;
 				tens = (pro - (pro % 10)) / 10;
 				ones = pro % 10;
-				_putchar(tens);
-				_putchar(ones);
+				_putchar(tens + '0');
+				_putchar(ones + '0');
 				if (b < 9)
 					_putchar(',');
 				else
@@ -36,7 +36,7 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar(pro);
+				_putchar(pro + '0');
 				if (b < 9)
 					_putchar(',');
 				else
