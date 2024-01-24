@@ -22,7 +22,7 @@ void times_table(void)
 		for (b = 0; b <= 9; b++)
 		{
 			pro = a * b;
-			if (pro > 10)
+			if (pro >= 10)
 			{
 				int tens, ones;
 				tens = (pro - (pro % 10)) / 10;
@@ -31,6 +31,7 @@ void times_table(void)
 				_putchar(ones + '0');
 				if (b < 9)
 					_putchar(',');
+					_putchar(' ');
 				else
 					_putchar('\n');;
 			}
@@ -39,6 +40,7 @@ void times_table(void)
 				_putchar(pro + '0');
 				if (b < 9)
 					_putchar(',');
+					_putchar(' ');
 				else
 					_putchar('\n');
 			}
