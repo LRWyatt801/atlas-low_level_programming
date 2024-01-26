@@ -11,4 +11,4 @@ Directory: more_functions_nested_loops
 			 followed by a new line
 5-more_numbers.c - Write a function that prints 10 time the number
 		   0-14 followed by a new line
-
+6-print_line.c - Write a function that draws a straight line
