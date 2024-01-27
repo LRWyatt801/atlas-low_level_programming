@@ -14,19 +14,20 @@
 
 void print_diagonal(int n)
 {
-	int a = 0;
+	int a, b;
 
 	if (n > 0)
 	{
-		while (a < n)
-		{
-			while (a < n)
-				_putchar(' ');
-			_putchar('\\');
-			_putchar('\n');
-			a++;
+		for (a = 0; a <= n; a++)
+		{	
+			for (b = 1; b <= n; b++)
+			{
+				if (a != b)
+					_putchar(' ');
+				_putchar('\\');
+				_putchar('\n');
+			}
 		}
 	}
-	else
-		_putchar('\n');
+	_putchar('\n');
 }
