@@ -6,7 +6,7 @@
 #include<stdio.h>
 
 /**
- * fizz_buzz - print int 1-100 where:
+ * main - print int 1-100 where:
  * 	       multiples of 3 prints Fizz
  * 	       multiples of 5 prints Buzz
  * 	       multiples of both print Fizz Buzz
@@ -14,7 +14,7 @@
  * Return: N/A
  */
 
-void fizz_buzz(int n)
+void main(int n)
 {
 	for (n = 0; n <= 100; n++)
 	{
