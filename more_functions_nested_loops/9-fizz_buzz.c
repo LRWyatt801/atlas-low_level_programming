@@ -18,14 +18,14 @@ void fizz_buzz(int n)
 {
 	for (n = 0; n <= 100; n++)
 	{
-		if (n == (n % 3 = 0))
+		if (n == (n % 3 == 0))
 			printf("Fizz ");
-		else if (n == (n % 5 = 0))
+		else if (n == (n % 5 == 0))
 			printf("Buzz ");
-		else if (n == (n % 15 = 0))
+		else if (n == (n % 15 == 0))
 			printf("Fizz Buzz ");
 		else
 			printf("%d ", n);
 	}
-	printf('\n');
+	printf("\n");
 }
