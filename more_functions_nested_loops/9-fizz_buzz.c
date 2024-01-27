@@ -11,7 +11,7 @@
  * 	       multiples of 5 prints Buzz
  * 	       multiples of both print Fizz Buzz
  *
- * Return: N/A
+ * Return: always 0 (success)
  */
 
 int main(void)
@@ -30,4 +30,5 @@ int main(void)
 			printf("%d ", n);
 	}
 	printf("\n");
+	return (0);
 }
