@@ -7,9 +7,9 @@
 
 /**
  * main - print int 1-100 where:
- * 	       multiples of 3 prints Fizz
- * 	       multiples of 5 prints Buzz
- * 	       multiples of both print Fizz Buzz
+ *	  multiples of 3 prints Fizz
+ *	  multiples of 5 prints Buzz
+ *	  multiples of both print Fizz Buzz
  *
  * Return: always 0 (success)
  */
