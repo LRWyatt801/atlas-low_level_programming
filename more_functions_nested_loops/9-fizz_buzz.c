@@ -14,7 +14,7 @@
  * Return: N/A
  */
 
-void main(int n)
+void main(void)
 {
 	for (n = 0; n <= 100; n++)
 	{
