@@ -24,8 +24,11 @@ void print_diagonal(int n)
 			{
 				if (a != b)
 					_putchar(' ');
-				_putchar('\\');
-				_putchar('\n');
+				else
+				{
+					_putchar('\\');
+					_putchar('\n');
+				}
 			}
 		}
 	}
