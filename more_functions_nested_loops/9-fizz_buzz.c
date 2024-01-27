@@ -16,6 +16,8 @@
 
 void main(void)
 {
+	int n;
+
 	for (n = 0; n <= 100; n++)
 	{
 		if (n == (n % 3 == 0))
