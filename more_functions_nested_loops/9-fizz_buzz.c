@@ -14,7 +14,7 @@
  * Return: N/A
  */
 
-void main(void)
+int main(void)
 {
 	int n;
 
