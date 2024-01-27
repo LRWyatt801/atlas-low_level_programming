@@ -25,7 +25,7 @@ int main(void)
 		else if (n % 5 == 0 && n % 3 != 0)
 			printf(" Buzz");
 		else if (n % 15 == 0)
-			printf(" FizzBuz ");
+			printf(" FizzBuzz");
 		else if (n == 1)
 			printf("1");
 		else
