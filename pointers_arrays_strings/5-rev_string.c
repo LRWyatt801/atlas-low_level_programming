@@ -33,4 +33,4 @@ void rev_string(char *s)
 		s[i] = s[len];
 		s[len--] = tmp;
 	}
-	_putchar('\n');}
+}
