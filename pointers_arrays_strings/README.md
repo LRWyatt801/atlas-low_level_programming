@@ -16,4 +16,7 @@ This file goes over Pointers, arrays, and strings
 		followed by a new line
 8-print_array.c - Write a function that prints 'n' elements of array,
 		  followed by a new line
+9-strcpy.c - Write a function that copies the string point to by 'src'
+	     including the terminating null '\0',
+	     to the buffer pointed to by 'dest'
 
