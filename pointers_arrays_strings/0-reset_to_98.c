@@ -7,6 +7,7 @@
 
 /**
  * reset_to_98 - resets int var to 98 via pointer
+ * *n: pointer to reset n
  *
  * Return: N/A
  */
