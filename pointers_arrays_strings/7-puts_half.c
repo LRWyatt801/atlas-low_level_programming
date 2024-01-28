@@ -20,8 +20,8 @@ void puts_half(char *str)
 
 	while (str[i] != '\0')
 		i++;
-	odd = (i - 1) / 2;
 	even = i / 2;
+	odd = even++;
 
 	/* print */
 
