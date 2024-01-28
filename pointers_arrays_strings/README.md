@@ -12,4 +12,6 @@ This file goes over Pointers, arrays, and strings
 5-rev_string.c - Write a function that reverses a string
 6-puts2.c - Write a function that prints every other character
 	    starting with the first char, followed by new line
+7-puts_half.c - Write a function that prints half of a string,
+		followed by a new line
 
