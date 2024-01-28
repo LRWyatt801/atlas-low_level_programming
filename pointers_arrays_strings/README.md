@@ -5,4 +5,7 @@ This file goes over Pointers, arrays, and strings
 		  to to 98
 1-swap.c - Write a function that swaps the values of two int
 2-strlen.c - Write a function that returns the length of a string
-
+3-puts.c - Write a function that prins a string,
+	   followed by a new line3-puts.c - Write a function that prins a string,
+	   followed by a new line3-puts.c - Write a function that prins a string,
+	   followed by a new line
