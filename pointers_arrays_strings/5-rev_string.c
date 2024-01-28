@@ -22,7 +22,7 @@ void rev_string(char *s)
 
 	while (s[i] != '\0')
 		i++;
-	len = i;
+	len = i - 1;
 
 	/* reverses string in s[] */
 
