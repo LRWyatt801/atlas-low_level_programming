@@ -1,0 +1,20 @@
+/*
+ * file: 0-reset_to_98.c
+ * auth: Logan Wyatt
+ */
+
+#include "main.h"
+
+/**
+ * reset_to_98 - resets int var to 98 via pointer
+ *
+ * Return: N/A
+ */
+
+void reset_to_98(int *n)
+{
+	int n;
+	*n = &n;
+
+	*n = 98;
+}
