@@ -14,17 +14,22 @@
 
 void rev_string(char *s)
 {
-	int i, n, len;
+	int i, len, tmp;
+
+	/* legnth of rev */
 
 	i = 0;
 
 	while (s[i] != '\0')
 		i++;
-
 	len = i;
 
-	for (n = len - 1; n >= 0; n--)
-		_putchar(s[n]);
+	/* reverses string in s[] */
 
-	_putchar('\n');
+	for (i = 0; i < len / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[len];
+		s[len--] = tmp;
+	}
 }
