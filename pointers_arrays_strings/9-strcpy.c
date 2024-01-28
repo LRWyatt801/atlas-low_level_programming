@@ -1,5 +1,5 @@
 /*
- * file: 9-strcpy.c
+ * file: 9-str_cpy.c
  * auth: Logan Wyatt
  */
 
