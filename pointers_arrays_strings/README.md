@@ -14,4 +14,6 @@ This file goes over Pointers, arrays, and strings
 	    starting with the first char, followed by new line
 7-puts_half.c - Write a function that prints half of a string,
 		followed by a new line
+8-print_array.c - Write a function that prints 'n' elements of array,
+		  followed by a new line
 
