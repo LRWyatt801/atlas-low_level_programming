@@ -15,7 +15,7 @@
 void rev_string(char *s)
 {
 	char tmp;
-	int i, len,;
+	int i, len;
 
 	/* legnth of rev */
 
