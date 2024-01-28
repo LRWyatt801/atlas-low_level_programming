@@ -9,4 +9,5 @@ This file goes over Pointers, arrays, and strings
 	   followed by a new line
 4-print_rev.c - Write a function that prins a string, in reverse,
 		followed by a new line
+5-rev_string.c - Write a function that reverses a string
 
