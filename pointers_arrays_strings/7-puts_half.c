@@ -14,17 +14,26 @@
 
 void puts_half(char *str)
 {
-	int i = 0, n;
+	int i = 0, odd, even;
 
 	/* length */
 
 	while (str[i] != '\0')
 		i++;
-	n = (i - 1) / 2;
+	odd = (i - 1) / 2;
+	even = i / 2;
 
 	/* print */
 
-	for (i = n; str[i] != '\0'; i++)
-		_putchar(str[i]);
+	if (i % 2 == 0) /* even */
+	{
+		for (i = even; str[i] != '\0'; i++)
+			_putchar(str[i]);
+	}
+	else /* odd */
+	{
+		for (i = odd; str[i] != '\0'; i++)
+			_putchar(str[i]);
+	}
 	_putchar('\n');
 }
