@@ -21,7 +21,7 @@ void puts_half(char *str)
 	while (str[i] != '\0')
 		i++;
 	even = i / 2;
-	odd = even++;
+	odd = (i - 1) / 2;
 
 	/* print */
 
