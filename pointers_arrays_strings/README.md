@@ -19,4 +19,4 @@ This file goes over Pointers, arrays, and strings
 9-strcpy.c - Write a function that copies the string point to by 'src'
 	     including the terminating null '\0',
 	     to the buffer pointed to by 'dest'
-
+100-atoi.c - Write a function that converts a string to an int
