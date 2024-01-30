@@ -32,6 +32,7 @@ int _atoi(char *s)
 		{
 			num = s[i] + '0';
 			boolean = 1;
+		}
 		else
 			break;
 	}
