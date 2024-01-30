@@ -29,9 +29,8 @@ int _atoi(char *s)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 			num = s[i] + '0';
-		if (s[i] == '-')
-			num = num * sign;
 	}
+	num *= sign;
 	if (s[i] >= '0' && s[i] <= '9')
 		return (num);
 	else
