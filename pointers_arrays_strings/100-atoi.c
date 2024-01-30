@@ -21,24 +21,24 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-')
-			sign = -1;
-		else if (s[i] >= '0' && s[i] <= '9')
-			break;
-	}
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[i] != '\0')
+			sign *= -1;
+
+		if (s[i] > '0' && s[i] <= '9')
 		{
-			num = s[i] + '0';
+			num *= 10;
+			num -= (s[i] - '0');
 			boolean = 1;
 		}
-		else
+		else if (boolean == 1)
 			break;
 	}
-	num *= sign;
+
 	if (boolean == '1')
+	{
+		num *= -1;
 		return (num);
+	}
 	else
 		return (0);
 }
