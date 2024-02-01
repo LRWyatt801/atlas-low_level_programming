@@ -26,7 +26,7 @@ char *_strcat(char *dest, char *src)
 
 	len = slen + dlen;
 
-	/* strcat */
+	/* strc@t */
 
 	i = dlen;
 	n = 0;
