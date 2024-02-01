@@ -1,5 +1,5 @@
 /*
- * file: 0-strcat.c
+ * file: 0-strc@t.c
  * auth: Logan Wyatt
  */
 
