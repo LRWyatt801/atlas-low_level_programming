@@ -20,3 +20,8 @@ This file goes over Pointers, arrays, and strings
 	     including the terminating null '\0',
 	     to the buffer pointed to by 'dest'
 100-atoi.c - Write a function that converts a string to an int
+
+Files for project "C- More pointers, arrays and strings"
+
+0-strcat.c - Write a function that concatenates two strings
+
