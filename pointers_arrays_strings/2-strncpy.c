@@ -27,8 +27,8 @@ char *_strncpy(char *dest, char *src, int n)
 	if (n < i)
 		len = n;
 	else if (n > i)
-		len = i;
-	
+		len = i + 1;
+
 	/* copy */
 
 	for (i = 0; i <= len; i++)
