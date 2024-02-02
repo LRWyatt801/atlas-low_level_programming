@@ -33,7 +33,7 @@ char *_strcat(char *dest, char *src)
 
 	while (i <= len)
 	{
-		dest[i] = src [n];
+		dest[i] = src[n];
 		i++;
 		n++;
 	}
