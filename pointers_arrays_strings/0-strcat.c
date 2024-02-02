@@ -24,11 +24,11 @@ char *_strcat(char *dest, char *src)
 	for (i = 0; dest[i] != '\0'; i++)
 		dlen = i;
 
-	len = slen + dlen;
+	len = slen + dlen + 1;
 
 	/* strc@t */
 
-	i = dlen;
+	i = dlen + 1;
 	n = 0;
 
 	while (i <= len)
