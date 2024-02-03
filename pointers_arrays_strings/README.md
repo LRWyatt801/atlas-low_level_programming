@@ -27,4 +27,5 @@ Files for project "C- More pointers, arrays and strings"
 1-strncat.c - Write a function taht concatenates two strings,
 	      with n bytes from src
 2-strncpy - Write a function that copies a string
-h
+3-strcmp.c - Write a function that compares two strings
+
