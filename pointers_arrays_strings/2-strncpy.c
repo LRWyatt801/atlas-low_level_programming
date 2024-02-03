@@ -16,7 +16,7 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, len;
+	int i, ndif;
 
 	/* length */
 
@@ -24,15 +24,27 @@ char *_strncpy(char *dest, char *src, int n)
 	while (src[i] != '\0')
 		i++;
 
-	if (n < i)
-		len = n;
-	else if (n > i)
-		len = i + 1;
-
 	/* copy */
+	
+	if (n < i)
+	{
+		while ((*dest++ = *src++) <= n)
+			;
+	}
+	else if (n == i)
+	{
+		while ((*dest++ = *src++) != '\0')
+			;
+	}
+	else if (n > i)
+	{
+		ndif = n - i;
 
-	for (i = 0; i <= len; i++)
-		dest[i] = src[i];
+		while ((*dest++ = *src++) <= i)
+			;
+		for (i = ndif; i <= n; i++)
+			dest[i] = '\0';
+	}	
 
 	return (dest);
 }
