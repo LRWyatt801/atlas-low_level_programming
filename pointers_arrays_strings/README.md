@@ -30,4 +30,6 @@ Files for project "C- More pointers, arrays and strings"
 3-strcmp.c - Write a function that compares two strings
 4-rev_array.c - Write a function that reverses the content of an array
 		of integers
+5-string_toupper.c - write a function that changes all lowercase letter
+		     of a string to uppercase letters
 
