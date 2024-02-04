@@ -18,6 +18,8 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
+		if (str[1] >= 97 && str[1] <= 122)
+			str[1] = str[1] - 32;
 		if ((str[i] < 65) || (str[i] > 90 && str[i] < 97) || (str[i] > 122))
 		{
 			if (str[i + 1] >= 97 && str[i + 1] <= 122)
