@@ -1,4 +1,4 @@
-This file goes over Pointers, arrays, and strings
+Files for project : "C - Pointers, arrays and strings"
 
 0-reset_to_98.c - Write a function that takes a pointer to an int
 		  as parameter and updates the value it points
@@ -21,17 +21,19 @@ This file goes over Pointers, arrays, and strings
 	     to the buffer pointed to by 'dest'
 100-atoi.c - Write a function that converts a string to an int
 
-Files for project "C- More pointers, arrays and strings"
+Files for project : "C- More pointers, arrays and strings"
 
 0-strcat.c - Write a function that concatenates two strings
 1-strncat.c - Write a function taht concatenates two strings,
 	      with n bytes from src
 2-strncpy - Write a function that copies a string
 3-strcmp.c - Write a function that compares two strings
-4-rev_array.c - Write a function that reverses the content of an array
-		of integers
-5-string_toupper.c - write a function that changes all lowercase letter
-		     of a string to uppercase letters
-6-cap_string.c - Write a functino that capitalizeds all words of a string
-7-leet.c - Write a function that encodes a string into 1337
+4-rev_array.c - Write a function that reverses the content of an array of integers\n
+5-string_toupper.c - write a function that changes all lowercase letter of a string to uppercase letters/n
+6-cap_string.c - Write a functino that capitalizeds all words of a string\n
+7-leet.c - Write a function that encodes a string into 1337\n
+
+Files for project : "C - Even more pointers, arrays and strings"
+
+0-memset.c - Write a function that fills memory with a constant byte\n
 
