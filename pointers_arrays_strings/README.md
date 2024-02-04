@@ -36,4 +36,5 @@ Files for project : "C- More pointers, arrays and strings"
 Files for project : "C - Even more pointers, arrays and strings"
 
 0-memset.c - Write a function that fills memory with a constant byte\n
+1-memcpy.c - Write a function that copies memory area/n
 
