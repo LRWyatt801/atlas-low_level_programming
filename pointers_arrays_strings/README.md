@@ -32,4 +32,5 @@ Files for project "C- More pointers, arrays and strings"
 		of integers
 5-string_toupper.c - write a function that changes all lowercase letter
 		     of a string to uppercase letters
+6-cap_string.c - Write a functino that capitalizeds all words of a string
 
