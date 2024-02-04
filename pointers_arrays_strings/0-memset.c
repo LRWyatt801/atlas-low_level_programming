@@ -1,12 +1,12 @@
 /*
- * file: 0-mems3t.c
+ * file: 0_memset.c
  * auth: Logan Wyatt
  */
 
 #include "main.h"
 
 /**
- * memset - fills memory with a constant byte
+ * _memset - fills memory with a constant byte
  * @s: area of memory to be filled
  * @b: constant
  * @n: number of bytes to fill
