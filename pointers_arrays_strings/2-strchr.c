@@ -11,12 +11,12 @@
  * @c: char to be located
  *
  * Return: return pointer to first char  occurrence in string
- * 	   and \0 if char is not found
+ *	   and \0 if char is not found
  */
 
 char *_strchr(char *s, char c)
 {
-	int i;
+	int i, boolean = 0;
 	char *c1;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -24,10 +24,12 @@ char *_strchr(char *s, char c)
 		if (s[i] == c)
 		{
 			c1 = &s[i];
+			boolean = 1;
 			break;
 		}
-		else
-			return ('\0');
 	}
-	return (c1);
+	if (boolean == 0)
+		return ('\0');
+	else if (boolean == 1)
+		return (c1);
 }
