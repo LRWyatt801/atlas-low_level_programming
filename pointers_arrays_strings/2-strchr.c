@@ -20,10 +20,10 @@ char *_strchr(char *s, char c)
 	char *c1;
 
 	for (i = 0; s[i] != '\0'; i++)
-		len = i;
+		len = i + 1;
 
 
-	for (i = 0;i <= len; i++)
+	for (i = 0; i <= len; i++)
 	{
 		if (s[i] == c)
 		{
