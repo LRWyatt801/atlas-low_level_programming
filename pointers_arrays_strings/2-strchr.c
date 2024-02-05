@@ -19,7 +19,7 @@ char *_strchr(char *s, char c)
 	int i, boolean = 0;
 	char *c1;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] == '\0'; i++)
 	{
 		if (s[i] == c)
 		{
