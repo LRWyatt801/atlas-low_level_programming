@@ -30,6 +30,5 @@ char *_strchr(char *s, char c)
 	}
 	if (boolean == 0)
 		return ('\0');
-	else if (boolean == 1)
-		return (c1);
+	return (c1);
 }
