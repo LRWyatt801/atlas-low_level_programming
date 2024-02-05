@@ -28,13 +28,14 @@ Files for project : "C- More pointers, arrays and strings"
 	      with n bytes from src
 2-strncpy - Write a function that copies a string
 3-strcmp.c - Write a function that compares two strings
-4-rev_array.c - Write a function that reverses the content of an array of integers\n
-5-string_toupper.c - write a function that changes all lowercase letter of a string to uppercase letters/n
-6-cap_string.c - Write a functino that capitalizeds all words of a string\n
-7-leet.c - Write a function that encodes a string into 1337\n
+4-rev_array.c - Write a function that reverses the content of an array of integers
+5-string_toupper.c - write a function that changes all lowercase letter of a string to uppercase letters
+6-cap_string.c - Write a functino that capitalizeds all words of a string
+7-leet.c - Write a function that encodes a string into 1337
 
 Files for project : "C - Even more pointers, arrays and strings"
 
-0-memset.c - Write a function that fills memory with a constant byte\n
-1-memcpy.c - Write a function that copies memory area/n
+0-memset.c - Write a function that fills memory with a constant byte
+1-memcpy.c - Write a function that copies memory area
+2-strchr.c - Write a function that locates a char in a string
 
