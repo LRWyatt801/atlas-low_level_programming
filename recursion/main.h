@@ -1,0 +1,14 @@
+/* header file */
+
+#ifndef HEADER_H
+#define HEADER_H
+
+#include <stdio.h>
+
+/* prototypes */
+
+int _putchar(char c);
+void _puts_recursion(char *s);
+
+
+#endif
