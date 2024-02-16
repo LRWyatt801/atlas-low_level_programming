@@ -25,9 +25,11 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	else if (size == 0)
 		return (NULL);
-	
+
 	for (i = 0; i <= size; i++)
 		new_array[i] = c;
+
+	free(new_array);
 
 	return (new_array);
 }
