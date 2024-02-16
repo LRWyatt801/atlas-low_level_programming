@@ -21,15 +21,13 @@ char *create_array(unsigned int size, char c)
 
 	new_array = malloc(sizeof(char) * size);
 
-	if (new_array == NULL)
-		return (NULL);
-	else if (size == 0)
+	if (new_array == NULL || size == 0)
 		return (NULL);
 
 	for (i = 0; i <= size; i++)
 		new_array[i] = c;
 
-	free(new_array);
-
 	return (new_array);
+
+	free(new_array);
 }
