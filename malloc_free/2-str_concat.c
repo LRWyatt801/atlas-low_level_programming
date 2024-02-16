@@ -38,25 +38,19 @@ char *str_concat(char *s1, char *s2)
 	if (strcat == NULL)
 		return (NULL);
 
-	if (s1 != NULL)
+	i = 0;
+	while (x < leni)
 	{
-		i = 0;
-		while (x < leni)
-		{
-			strcat[x] = s1[i];
-			x++;
-			i++;
-		}
+		strcat[x] = s1[i];
+		x++;
+		i++;
 	}
-	else if (s2 != NULL)
+	j = 0;
+	while (x <= leni + lenj)
 	{
-		j = 0;
-		while (x <= leni + lenj)
-		{
-			strcat[x] = s2[j];
-			x++;
-			j++;
-		}
+		strcat[x] = s2[j];
+		x++;
+		j++;
 	}
 	strcat[x] = '\0';
 
