@@ -1,4 +1,6 @@
 C-Structures, typedef
 
-0-dog.h - Define a new type struct dog.
+dog.h - Define a new type struct dog.
+1-init_dog.c - initializes a dog struct
+2-print_dog.c - prints info on dog
 
