@@ -11,7 +11,7 @@
  * Return: address of the new elemnet, or NULL on failure
  */
 
-listint_t *add_nodeint_add(listint_t **head, const int n)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 	listint_t *new, *tmp;
 
@@ -27,7 +27,7 @@ listint_t *add_nodeint_add(listint_t **head, const int n)
 	else
 	{
 		tmp = *head;
-		while (tmp->next == NULL)
+		while (tmp->next != NULL)
 			tmp = tmp->next;
 		tmp->next = new;
 	}
