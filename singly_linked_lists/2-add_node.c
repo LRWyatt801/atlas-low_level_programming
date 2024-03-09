@@ -13,36 +13,29 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node;
-	unsigned int i = 0;
+	list_t *new;
+	unsigned int len = 0;
 
-	if (head == NULL)
-		return (NULL);
+	while(str[len])
+		len++;
 
 	/* set mem for node */
-
-	new_node = NULL;
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 		return (NULL);
 
 	/* duplicate mem for str in node */
-	new_node->str = strdup(str);
-	if (new_node->str == NULL)
+	new->str = strdup(str);
+	if (new->str == NULL)
 	{
-		free(new_node->str);
+		free(new);
 		return (NULL);
 	}
 
-	/* set str len */
 
-	for (i = 0; str[i] != '\0'; i++)
-		;
-	new_node->len = i;
-
-	/* make new_node the head */
-	new_node->next = *head;
-	*head = new_node;
+	new->len = len;
+	new->next = *head;
+	*head = new;
 
 	return (*head);
 }
