@@ -27,17 +27,18 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
-	while (i < index -1)
+	while (tmp && i < index)
 	{
-		if (!tmp || !(tmp->next))
-			return (-1);
-		tmp = tmp->next;
+		if (i == index - 1)
+		{
+			del = tmp->next;
+			tmp->next = del->next;
+			free(del);
+			return (1);
+		}
+		else
+			tmp = tmp->next;
 		i++;
 	}
-
-	del = tmp->next;
-	tmp->next = del->next;
-	free(del);
-
-	return (1);
+	return (-1);
 }
