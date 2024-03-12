@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
@@ -28,6 +28,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	count = write(STDOUT_FILENO, print, ready);
 
 	free(print);
-	clost(file);
+	close(file);
 	return (count);
 }
