@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		count = write(file, text_content, strlen(textcontent));
+		count = write(file, text_content, strlen(text_content));
 		if (count == -1)
 		{
 			close(file);
