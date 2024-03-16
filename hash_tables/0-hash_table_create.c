@@ -3,7 +3,7 @@
 /**
  * hash_table_create - create a hash table
  * @size: size of the hash table
- * 
+ *
  * Return: pointer to new hash table, or 0 on fail
 */
 
@@ -23,7 +23,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(newHash);
 		return (NULL);
 	}
-
 
 	return (newHash);
 }
