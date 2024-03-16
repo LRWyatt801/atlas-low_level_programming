@@ -18,17 +18,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	index = key_index((const unsigned char *)key, ht->size);
-
 	newstr = strdup(value);
 	if (newstr == NULL)
 		return (0);
-	if (strcmp(ht->array[index]->key, key) == 0) /*update existing node */
+
+	index = key_index((const unsigned char *)key, ht->size);
+
+	/*if (strcmp(ht->array[index]->key, key) == 0) /*update existing node *
 	{
 		free(ht->array[index]->value);
 		ht->array[index]->value = newstr;
 		return (1);
-	}
+	}*/
 
 	newNode = malloc(sizeof(hash_node_t)); /* add new node data */
 	if (newNode == NULL)
