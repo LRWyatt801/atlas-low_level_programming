@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 
 	tmp = ht->array[index];
-	if (strcmp(tmp->key, key) == 0) /* update existing node */
+	if (tmp != NULL && strcmp(tmp->key, key) == 0) /* update existing node */
 	{
 		strcpy(ht->array[index]->value, value);
 		return (1);
