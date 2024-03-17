@@ -19,10 +19,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	index = key_index((const unsigned char *)key, ht->size);
 	if (index >= ht->size)
 		return (NULL);
-	
+
 	data = ht->array[index];
 	while (data != NULL && strcmp(data->key, key) != 0)
 		data = data->next;
-	
-	return((data == NULL) ? NULL : data->value);
+
+	return ((data == NULL) ? NULL : data->value);
 }
