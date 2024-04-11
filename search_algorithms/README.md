@@ -8,3 +8,10 @@ This project is to teach me about search algorithms.
 
 ## Linear Search
 
+Search through an array one element at a time.
+This method is O(n) on worst case.
+Meaning that the time complexty of it grows linearly with its size.
+Effective for small data size.
+
+## Binary Search
+
