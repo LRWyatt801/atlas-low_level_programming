@@ -11,12 +11,12 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	int arrsize = size - 1;
+	int rightindex = size - 1;
 	int index;
 
 	if (!array)
 		return (-1);
-	index = binarylimits(array, 0, arrsize, value);
+	index = binarylimits(array, 0, rightindex, value);
 	return (index);
 }
 
@@ -32,5 +32,25 @@ int binary_search(int *array, size_t size, int value)
 
 int binarylimits(int *array, int l, int r, int value)
 {
-	return (0);
+	int i;
+	int mid = l + (r - l) / 2;
+
+	if (l > r)
+		return (-1);
+
+	printf("Searching in array: ");
+	for(i = l; i <= r; i++)
+	{
+		if (i < r)
+			printf("%d, ", array[i]);
+		else
+			printf("%d\n", array[i]);
+	}
+
+	if (array[mid] == value)
+		return (mid);
+	else if (value < array[mid])
+		return (binarylimits(array, l, mid - 1, value));
+	else
+		return (binarylimits(array, mid + 1, r, value));
 }
