@@ -26,7 +26,7 @@ int binary_search(int *array, size_t size, int value)
  * @l: left index
  * @r: right index
  * @value: value to search for
- * 
+ *
  * Return: index of value, -1 if does not exist
 */
 
@@ -39,7 +39,7 @@ int binarylimits(int *array, int l, int r, int value)
 		return (-1);
 
 	printf("Searching in array: ");
-	for(i = l; i <= r; i++)
+	for (i = l; i <= r; i++)
 	{
 		if (i < r)
 			printf("%d, ", array[i]);
