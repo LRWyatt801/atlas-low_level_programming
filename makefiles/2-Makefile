@@ -8,6 +8,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
 
-%.o: %.c:
+%.o: %.c
 	$(CC) -c $^ -o $@
 
