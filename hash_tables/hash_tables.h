@@ -103,6 +103,6 @@ void shash_table_delete(shash_table_t *ht);
 
 /* HELPER FUNCS */
 
-unsigned long int size_align(unsigned long int size);
+unsigned long int align_size(unsigned long int size);
 
 #endif /* _HASH_TABLES_H */

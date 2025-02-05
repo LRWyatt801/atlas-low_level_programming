@@ -17,7 +17,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	if (newHash == NULL)
 		return (NULL);
 
-	size = size_align(size);
+	size = align_size(size);
 	newHash->size = size;
 	newHash->array = malloc(sizeof(shash_node_t *) * size);
 	if (newHash->array == NULL)
@@ -46,6 +46,9 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
+	(void)ht;
+	(void)key;
+	(void)value;
 	return (0);
 }
 
@@ -59,6 +62,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
+	(void)ht;
+	(void)key;
 	return ("hello");
 }
 
@@ -71,7 +76,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 void shash_table_print(const shash_table_t *ht)
 {
-
+	(void)ht;
 }
 
 /**
@@ -84,7 +89,7 @@ void shash_table_print(const shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-
+	(void)ht;
 }
 
 /**
@@ -96,7 +101,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 void shash_table_delete(shash_table_t *ht)
 {
-
+	(void)ht;
 }
 
 /********** HELPER FUNCS **********/
@@ -110,9 +115,10 @@ void shash_table_delete(shash_table_t *ht)
 
 unsigned long int align_size(unsigned long int size)
 {
-	if (size == 0) return 1;  // Edge case: 0 should round up to 1
+	if (size == 0)  /* Edge case: 0 should round up to 1 */
+		return (1);
 
-	size--;  // Decrement to handle exact powers of 2 correctly
+	size--;  /* Decrement to handle exact powers of 2 correctly */
 	size |= size >> 1;
 	size |= size >> 2;
 	size |= size >> 4;
