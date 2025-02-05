@@ -13,13 +13,13 @@ shash_table_t *shash_table_create(unsigned long int size)
 	shash_table_t *newHash;
 	unsigned long int i = 0;
 
-	newHash = malloc(sizeof(hash_table_t));
+	newHash = malloc(sizeof(shash_table_t));
 	if (newHash == NULL)
 		return (NULL);
 
 	size = size_align(size);
 	newHash->size = size;
-	newHash->array = malloc(sizeof(hash_node_t *) * size);
+	newHash->array = malloc(sizeof(shash_node_t *) * size);
 	if (newHash->array == NULL)
 	{
 		free(newHash);
