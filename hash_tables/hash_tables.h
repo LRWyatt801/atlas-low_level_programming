@@ -104,5 +104,6 @@ void shash_table_delete(shash_table_t *ht);
 /* HELPER FUNCS */
 
 unsigned long int align_size(unsigned long int size);
+char *_strdup(const char *str);
 
 #endif /* _HASH_TABLES_H */

@@ -50,14 +50,17 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *newNode, *tmp;
 	unsigned long int indexkey;
-	char *valuecpy;
+	char *valuecpy, *keycpy;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (-1);
 
 	/* make a copy of value */
-	valuecpy = strdup(value); /* TODO: write my own strdup */
+	valuecpy = _strdup(value);
 	if (valuecpy == NULL)
+		return (-1);
+	keycpy = _strdup(key);
+	if (keycpy == NULL)
 		return (-1);
 
 	indexkey = key_index((const unsigned char *)key, ht->size);
@@ -81,13 +84,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 
 	/* setup node for hashtable */
-	newNode = malloc(sizeof(hash_node_t)); /* add new node data */
+	newNode = malloc(sizeof(shash_node_t)); /* add new node data */
 	if (newNode == NULL)
 		return (0);
-	newNode->key = strdup(key); /* TODO: write strdup */
-	if (newNode->key == NULL)
-		return (0);
 
+	newNode->key = keycpy;
 	newNode->value = valuecpy;
 	newNode->next = NULL;
 	newNode->sprev = NULL;
@@ -97,19 +98,28 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else
 		tmp->next = newNode;
 
-
 	/* insert node in sorted hash list */
-	tmp = ht->shead; /* reuse tmp to traverse sorted hash */
-	if (!tmp)
+	if (ht->shead == NULL || *key < *ht->shead->key)
 	{
+		newNode->snext = ht->shead;
+		if (ht->shead != NULL)
+			ht->shead->sprev = newNode;
+		else if (ht->shead == NULL)
+			ht->stail = newNode;
 		ht->shead = newNode;
 		return (0);
 	}
-	while (tmp->snext != NULL)
+	tmp = ht->shead; /* reuse tmp to traverse sorted list */
+	while (tmp->snext != NULL && *tmp->snext->key < *key)
 		tmp = tmp->snext;
+
+	newNode->snext = tmp->snext;
+	if (tmp->snext != NULL)
+		tmp->snext->sprev = newNode;
 	tmp->snext = newNode;
 	newNode->sprev = tmp;
-
+	if (newNode->snext == NULL)
+		ht->stail = newNode;
 	return (0);
 }
 
@@ -139,17 +149,19 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
 
-	if (!ht)
-	{
-		printf("ht is NULL\n");
+	if (ht == NULL || ht->shead == NULL)
 		return;
-	}
+
 	tmp = ht->shead;
-	while (tmp->snext != NULL)
+	printf("{");
+	while (tmp != NULL)
 	{
-		printf("%s: %s\n", tmp->key, tmp->value);
+		printf("'%s': '%s'", tmp->key, tmp->value);
+		if (tmp->snext != NULL)
+			printf(", ");
 		tmp = tmp->snext;
 	}
+	printf("}\n");
 }
 
 /**
@@ -162,7 +174,21 @@ void shash_table_print(const shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	(void)ht;
+	shash_node_t *tmp;
+
+	if (ht == NULL || ht->stail == NULL)
+		return;
+
+	tmp = ht->stail;
+	printf("{");
+	while (tmp != NULL)
+	{
+		printf("'%s': '%s'", tmp->key, tmp->value);
+		if (tmp->sprev != NULL)
+			printf(", ");
+		tmp = tmp->sprev;
+	}
+	printf("}\n");
 }
 
 /**
@@ -202,4 +228,34 @@ unsigned long int align_size(unsigned long int size)
 	size++;  /* Increment to get the next power of 2 */
 
 	return (size);
+}
+
+/**
+ * _strdup - returns a copy of the given string in a dynamic pointer
+ * @str: string to be copied
+ *
+ * Return: pointer to new string or NULL if fail
+ */
+
+char *_strdup(const char *str)
+{
+	char *strcp;
+	size_t len = 0;
+	int i;
+
+	if (str == NULL)
+		return (NULL);
+
+	while (str[len] != '\0')
+		len++;
+
+	strcp = malloc(sizeof(char) * (len + 1));
+	if (strcp == NULL)
+		return (NULL);
+
+	for (i = 0; str[i] != '\0'; i++)
+		strcp[i] = str[i];
+	strcp[len + 1] = '\0';
+
+	return (strcp);
 }
