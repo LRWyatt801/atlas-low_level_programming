@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <stdio.h>
 #include <string.h>
 
 
@@ -92,23 +93,22 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	newNode->sprev = NULL;
 	newNode->snext = NULL;
 	if (tmp == NULL)
-	{
 		ht->array[indexkey] = newNode;
-		return (0);
-	}
-	tmp->next = newNode;
+	else
+		tmp->next = newNode;
+
 
 	/* insert node in sorted hash list */
 	tmp = ht->shead; /* reuse tmp to traverse sorted hash */
-	if (tmp != NULL)
+	if (!tmp)
 	{
-		while (tmp->snext != NULL)
-			tmp = tmp->snext;
-		tmp->snext = newNode;
-		newNode->sprev = tmp;
+		ht->shead = newNode;
+		return (0);
 	}
-	else
-		tmp = newNode;
+	while (tmp->snext != NULL)
+		tmp = tmp->snext;
+	tmp->snext = newNode;
+	newNode->sprev = tmp;
 
 	return (0);
 }
@@ -139,10 +139,15 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
 
+	if (!ht)
+	{
+		printf("ht is NULL\n");
+		return;
+	}
 	tmp = ht->shead;
 	while (tmp->snext != NULL)
 	{
-		printf("%s: %s", tmp->key, tmp->value);
+		printf("%s: %s\n", tmp->key, tmp->value);
 		tmp = tmp->snext;
 	}
 }
