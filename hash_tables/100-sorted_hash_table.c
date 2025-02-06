@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <string.h>
 
 
 /**
@@ -46,9 +47,69 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	(void)ht;
-	(void)key;
-	(void)value;
+	shash_node_t *newNode, *tmp;
+	unsigned long int indexkey;
+	char *valuecpy;
+
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+		return (-1);
+
+	/* make a copy of value */
+	valuecpy = strdup(value); /* TODO: write my own strdup */
+	if (valuecpy == NULL)
+		return (-1);
+
+	indexkey = key_index((const unsigned char *)key, ht->size);
+
+	/* Check if key/value exists and update value 
+	 * Handle collision, if collision move along linked list
+	 * until NULL 
+	 */
+	tmp = ht->array[indexkey];
+	while (tmp != NULL) /* check if indexkey already filled */
+	{
+		if (strcmp(tmp->key, key) == 0)
+		{
+			strcpy(tmp->value, value);
+			return (0);
+		}
+		if (tmp->next == NULL)
+			break;
+		tmp = tmp->next;
+	}
+
+
+	/* setup node for hashtable */
+	newNode = malloc(sizeof(hash_node_t)); /* add new node data */
+	if (newNode == NULL)
+		return (0);
+	newNode->key = strdup(key); /* TODO: write strdup */
+	if (newNode->key == NULL)
+		return (0);
+
+	newNode->value = valuecpy;
+	newNode->next = NULL;
+	newNode->sprev = NULL;
+	newNode->snext = NULL;
+	if (tmp == NULL)
+	{
+		ht->array[indexkey] = newNode;
+		return (0);
+	}
+	tmp->next = newNode;
+
+	/* insert node in sorted hash list */
+	tmp = ht->shead; /* reuse tmp to traverse sorted hash */
+	if (tmp != NULL)
+	{
+		while (tmp->snext != NULL)
+			tmp = tmp->snext;
+		tmp->snext = newNode;
+		newNode->sprev = tmp;
+	}
+	else
+		tmp = newNode;
+
 	return (0);
 }
 
@@ -76,7 +137,14 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 void shash_table_print(const shash_table_t *ht)
 {
-	(void)ht;
+	shash_node_t *tmp;
+
+	tmp = ht->shead;
+	while (tmp->snext != NULL)
+	{
+		printf("%s: %s", tmp->key, tmp->value);
+		tmp = tmp->snext;
+	}
 }
 
 /**
