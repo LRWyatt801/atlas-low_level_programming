@@ -19,7 +19,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 	if (newHash == NULL)
 		return (NULL);
 
-	size = align_size(size);
 	newHash->size = size;
 	newHash->array = malloc(sizeof(shash_node_t *) * size);
 	if (newHash->array == NULL)
@@ -56,10 +55,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (-1);
 
 	/* make a copy of value */
-	valuecpy = _strdup(value);
+	valuecpy = strdup(value);
 	if (valuecpy == NULL)
 		return (-1);
-	keycpy = _strdup(key);
+	keycpy = strdup(key);
 	if (keycpy == NULL)
 		return (-1);
 
@@ -81,7 +80,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			break;
 		tmp = tmp->next;
 	}
-
 
 	/* setup node for hashtable */
 	newNode = malloc(sizeof(shash_node_t)); /* add new node data */
@@ -200,7 +198,30 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 void shash_table_delete(shash_table_t *ht)
 {
-	(void)ht;
+	unsigned long int i;
+	shash_node_t *tmp, *del;
+
+	if (ht == NULL)
+		return;
+
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			tmp = ht->array[i];
+			while (tmp != NULL)
+			{
+				del = tmp;
+				tmp = tmp->next;
+				free(del->key);
+				free(del->value);
+				free(del);
+			}
+		}
+	}
+	free(ht->array);
+	free(ht);
+
 }
 
 /********** HELPER FUNCS **********/
