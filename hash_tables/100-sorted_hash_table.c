@@ -52,15 +52,15 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	char *valuecpy, *keycpy;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
-		return (-1);
+		return (0);
 
 	/* make a copy of value */
 	valuecpy = strdup(value);
 	if (valuecpy == NULL)
-		return (-1);
+		return (0);
 	keycpy = strdup(key);
 	if (keycpy == NULL)
-		return (-1);
+		return (0);
 
 	indexkey = key_index((const unsigned char *)key, ht->size);
 
@@ -84,7 +84,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	/* setup node for hashtable */
 	newNode = malloc(sizeof(shash_node_t)); /* add new node data */
 	if (newNode == NULL)
-		return (-1);
+		return (0);
 
 	newNode->key = keycpy;
 	newNode->value = valuecpy;
