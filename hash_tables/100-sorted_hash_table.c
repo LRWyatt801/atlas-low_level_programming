@@ -27,7 +27,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 		return (NULL);
 	}
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 		newHash->array[i] = NULL;
 
 	newHash->shead = NULL;
