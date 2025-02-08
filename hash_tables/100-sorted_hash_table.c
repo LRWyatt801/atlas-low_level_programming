@@ -74,7 +74,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		if (strcmp(tmp->key, key) == 0)
 		{
 			strcpy(tmp->value, value);
-			return (0);
+			return (1);
 		}
 		if (tmp->next == NULL)
 			break;
@@ -84,7 +84,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	/* setup node for hashtable */
 	newNode = malloc(sizeof(shash_node_t)); /* add new node data */
 	if (newNode == NULL)
-		return (0);
+		return (-1);
 
 	newNode->key = keycpy;
 	newNode->value = valuecpy;
@@ -105,7 +105,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		else if (ht->shead == NULL)
 			ht->stail = newNode;
 		ht->shead = newNode;
-		return (0);
+		return (1);
 	}
 	tmp = ht->shead; /* reuse tmp to traverse sorted list */
 	while (tmp->snext != NULL && *tmp->snext->key < *key)
@@ -118,7 +118,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	newNode->sprev = tmp;
 	if (newNode->snext == NULL)
 		ht->stail = newNode;
-	return (0);
+	return (1);
 }
 
 /**
