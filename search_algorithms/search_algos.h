@@ -13,4 +13,7 @@ int binary_search(int *array, size_t size, int value);
 
 int binarylimits(int *array, int l, int r, int value);
 
+/****************************** ADVANCED SEARCH ALGORITHMS *******************/
+int interpolation_search(int *array, size_t size, int value);
+
 #endif
